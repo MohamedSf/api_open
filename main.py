@@ -26,11 +26,11 @@ print('df shape = ', df.shape)
 model = pickle.load(open('lgbm.pkl', 'rb'))
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000
-@app.post('/')
+@app.get('/')
 def index():
     return {'message': 'Hello, World'}
 
-@app.get('/predict')
+@app.post('/predict')
 def credit(id_client):
 
     print('id client = ', id_client)
