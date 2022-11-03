@@ -54,7 +54,7 @@ def credit(id_client):
   
     dict_final = {
         'prediction' : int(prediction),
-        'proba' : float(proba[0][0])
+        'proba' : float(proba[0][1])
         }
 
     print('New prediction : \n', dict_final)
