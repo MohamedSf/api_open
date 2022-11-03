@@ -18,7 +18,7 @@ app = FastAPI()
 
 #Chargement des données 
 
-df = pd.read_csv('app_test.csv')
+df = pd.read_csv('test_sample.csv')
 
 print('df shape = ', df.shape)
 
