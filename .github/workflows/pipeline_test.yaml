@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
+    environment:
+      name: heroku_production
 
     steps:
     - uses: actions/checkout@v2
@@ -26,9 +29,9 @@ jobs:
       run: |
         pytest
 
-    # - name: Deploy to Heroku
-    #   uses: akhileshns/heroku-deploy@v3.12.12
-    #   with:
-    #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-    #     heroku_app_name: <your_heroku_app_name>
-    #     heroku_email: <your_heroku_email>
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: ${{secrets.HEROKU_APP_Name}}
+        heroku_email: ${{secrets.My_Email}}
