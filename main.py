@@ -26,7 +26,7 @@ print('df shape = ', df.shape)
 model = pickle.load(open('lgbm.pkl', 'rb'))
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000
-@app.post('/')
+@app.get('/')
 def index():
     return {'message': 'Hello, World'}
 
@@ -68,4 +68,4 @@ def credit(id_client):
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
     
-#uvicorn app:app --reload
+#uvicorn main:app --reload

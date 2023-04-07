@@ -1,0 +1,16 @@
+name: CI/CD github actions
+
+on:
+  push:
+    branches:
+      - "main"
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubtuntu-latest
+    step:
+      - name: Push repo
+        uses: actions/checkout@v3
+      - name: Print hello
+        run: echo "hello world"
